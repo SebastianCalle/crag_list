@@ -3,52 +3,24 @@
 {% block content %}
   <h2 style="text-align: center">{{ search | title }}</h2>
 
-  <div class="row" style="height: 500px">
-    <div class="col s4">
-      <div class="card">
-        <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1546570089-777fb6b884c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80">
-          <span class="card-title">Card Title</span>
+    <div class="row" style="height: 500px">
+      {% for post in final_postings %}
+        <div class="col s4">
+          <div class="card">
+            <div class="card-image">
+              <img src="{{ post.3 }}" style="height: 240px">
+              <span class="card-title"></span>
+            </div>
+            <div class="card-content">
+              <p>{{ post.0 }}</p>
+              <p>Price: {{ post.2 }}</p>
+            </div>
+            <div class="card-action">
+              <a href="{{ post.1 }}">Got to</a>
+            </div>
+          </div>
         </div>
-        <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
-        </div>
-        <div class="card-action">
-          <a href="#">This is a link</a>
-        </div>
-      </div>
+      {% endfor %}
     </div>
-    <div class="col s4">
-      <div class="card">
-        <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1546570089-777fb6b884c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80">
-          <span class="card-title">Card Title</span>
-        </div>
-        <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
-        </div>
-        <div class="card-action">
-          <a href="#">This is a link</a>
-        </div>
-      </div>
-    </div>
-    <div class="col s4">
-      <div class="card">
-        <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1546570089-777fb6b884c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80">
-          <span class="card-title">Card Title</span>
-        </div>
-        <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
-        </div>
-        <div class="card-action">
-          <a href="#">This is a link</a>
-        </div>
-      </div>
-    </div>
-  </div>
 
 {% endblock content %}
