@@ -1,1 +1,1 @@
-web: gunicorn codelist.wsgi
+web: gunicorn codelist:app
